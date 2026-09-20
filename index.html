@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Renato Villarroel — Desarrollador Full Stack</title>
+<meta name="description" content="Portafolio de Renato Villarroel, Desarrollador de Software enfocado en sistemas SaaS y facturación electrónica.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=30">
+</head>
+<body>
+
+<div id="cursor-glow" aria-hidden="true"></div>
+
+<div id="bgParallax" class="bg-parallax" aria-hidden="true">
+  <span class="bg-glow bg-glow--cyan" data-speed="0.1" data-max-drift="180"></span>
+  <span class="bg-glow bg-glow--violet" data-speed="0.18" data-max-drift="180"></span>
+</div>
+
+<!-- MOBILE TOP BAR (hidden on desktop — the sidebar carries brand + nav there) -->
+<header class="mobile-nav" id="mobileNav">
+  <a href="#top" class="mobile-nav__brand">RV<span class="dot">.</span></a>
+  <button class="nav__burger" id="navBurger" aria-label="Abrir menú" aria-expanded="false" aria-controls="navMobile">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+<div class="nav__mobile" id="navMobile">
+  <a href="#home">Home</a>
+  <a href="#about">Acerca de mí</a>
+  <a href="#projects">Proyectos</a>
+  <a href="#skills">Stack</a>
+  <a href="#contact">Contacto</a>
+</div>
+
+<div class="layout">
+
+  <!-- SIDEBAR: stays put while the content on the right scrolls -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar__scene" id="heroScene" aria-hidden="true">
+      <canvas id="starCanvas" class="bg-stars"></canvas>
+      <div class="parallax-layer" data-depth="0.05" id="layerStarsFar"></div>
+      <div class="parallax-layer" data-depth="0.1" id="layerStarsNear"></div>
+
+      <svg class="parallax-layer scene-moon-distant" data-depth="0.06" viewBox="0 0 240 240">
+        <defs>
+          <radialGradient id="bgMoonGlow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#bfe9ff" stop-opacity="0.4"/>
+            <stop offset="55%" stop-color="#4de3ff" stop-opacity="0.10"/>
+            <stop offset="100%" stop-color="#4de3ff" stop-opacity="0"/>
+          </radialGradient>
+          <radialGradient id="bgMoonBody" cx="32%" cy="28%" r="78%">
+            <stop offset="0%" stop-color="#f4f6fa"/>
+            <stop offset="50%" stop-color="#cbd3e0"/>
+            <stop offset="100%" stop-color="#848da0"/>
+          </radialGradient>
+        </defs>
+        <circle cx="120" cy="120" r="118" fill="url(#bgMoonGlow)"/>
+        <circle cx="120" cy="120" r="68" fill="url(#bgMoonBody)"/>
+        <circle cx="98" cy="92" r="11" fill="#828ba0" opacity="0.55"/>
+        <circle cx="98" cy="92" r="11" fill="none" stroke="#eef1f6" stroke-opacity="0.35" stroke-width="1.5"/>
+        <circle cx="142" cy="104" r="6.5" fill="#828ba0" opacity="0.5"/>
+        <circle cx="108" cy="138" r="15" fill="#909aad" opacity="0.45"/>
+        <circle cx="108" cy="138" r="15" fill="none" stroke="#eef1f6" stroke-opacity="0.3" stroke-width="1.5"/>
+        <circle cx="150" cy="142" r="5" fill="#828ba0" opacity="0.5"/>
+        <circle cx="78" cy="125" r="5.5" fill="#828ba0" opacity="0.45"/>
+        <circle cx="130" cy="70" r="4" fill="#828ba0" opacity="0.4"/>
+      </svg>
+
+      <svg class="parallax-layer scene-moon" data-depth="0.16" viewBox="0 0 700 900" preserveAspectRatio="xMidYMax slice">
+        <defs>
+          <linearGradient id="moonGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#5a5f78"/>
+            <stop offset="45%" stop-color="#383c4e"/>
+            <stop offset="100%" stop-color="#15161e"/>
+          </linearGradient>
+        </defs>
+        <ellipse cx="350" cy="1050" rx="620" ry="360" fill="url(#moonGrad)"/>
+        <ellipse cx="350" cy="1050" rx="620" ry="360" fill="none" stroke="#00f0ff" stroke-opacity="0.15" stroke-width="2"/>
+        <g>
+          <ellipse cx="120" cy="760" rx="36" ry="16" fill="#12131c" opacity="0.75"/>
+          <path d="M90,753 a36,16 0 0 1 24,-13" fill="none" stroke="#d6dae8" stroke-opacity="0.55" stroke-width="3.5" stroke-linecap="round"/>
+          <ellipse cx="260" cy="705" rx="18" ry="8" fill="#12131c" opacity="0.7"/>
+          <ellipse cx="360" cy="790" rx="44" ry="20" fill="#12131c" opacity="0.75"/>
+          <path d="M328,782 a44,20 0 0 1 28,-16" fill="none" stroke="#d6dae8" stroke-opacity="0.55" stroke-width="4" stroke-linecap="round"/>
+          <ellipse cx="500" cy="715" rx="22" ry="10" fill="#12131c" opacity="0.68"/>
+          <path d="M482,709 a22,10 0 0 1 14,-8" fill="none" stroke="#d6dae8" stroke-opacity="0.5" stroke-width="3" stroke-linecap="round"/>
+          <ellipse cx="590" cy="795" rx="30" ry="14" fill="#12131c" opacity="0.72"/>
+          <ellipse cx="60" cy="830" rx="20" ry="9" fill="#12131c" opacity="0.68"/>
+        </g>
+      </svg>
+
+      <svg class="parallax-layer scene-astro" data-depth="0.24" viewBox="0 0 400 400">
+        <g id="astronautGroup" transform="translate(200,300)">
+          <ellipse cx="0" cy="92" rx="70" ry="10" fill="#000" opacity="0.35"/>
+          <path d="M-45,60 Q-50,10 -20,-10 L20,-10 Q50,10 45,60 Q0,85 -45,60 Z" fill="#e9edf3"/>
+          <path d="M-45,60 Q-50,10 -20,-10 L-8,-10 L-8,70 Q-30,68 -45,60Z" fill="#c7ced9"/>
+          <rect x="-14" y="-4" width="28" height="26" rx="6" fill="#8ea0b5"/>
+          <circle cx="-24" cy="18" r="11" fill="#e9edf3"/>
+          <circle cx="24" cy="18" r="11" fill="#e9edf3"/>
+          <path d="M-34,-30 Q0,-55 34,-30 L34,-2 Q0,-24 -34,-2 Z" fill="#e9edf3"/>
+          <circle cx="0" cy="-28" r="34" fill="#dfe5ec"/>
+          <circle cx="0" cy="-28" r="27" fill="#0d1b2a"/>
+          <circle cx="0" cy="-28" r="27" fill="url(#visorGrad)"/>
+          <circle cx="-9" cy="-37" r="6" fill="#ffffff" opacity="0.5"/>
+          <ellipse cx="-52" cy="20" rx="12" ry="24" fill="#e9edf3"/>
+          <ellipse cx="52" cy="14" rx="12" ry="22" fill="#e9edf3" transform="rotate(-18 52 14)"/>
+          <circle cx="0" cy="6" r="9" fill="#7cf9ff" opacity="0.85"/>
+        </g>
+        <defs>
+          <radialGradient id="visorGrad" cx="35%" cy="30%" r="75%">
+            <stop offset="0%" stop-color="#4de3ff"/>
+            <stop offset="55%" stop-color="#0f2942"/>
+            <stop offset="100%" stop-color="#050912"/>
+          </radialGradient>
+        </defs>
+      </svg>
+
+      <div class="scene-vignette" aria-hidden="true"></div>
+    </div>
+
+    <div class="sidebar__inner">
+      <div class="sidebar__top">
+        <p class="eyebrow"><span id="typewriter"></span><span class="typewriter-cursor" aria-hidden="true">|</span></p>
+        <h1 class="sidebar__name">Renato Villarroel H.</h1>
+        <p class="sidebar__tagline">Construyo software y arquitectura de datos para dar forma a tus ideas y crecer junto a tu empresa.</p>
+      </div>
+
+      <nav class="sidebar__nav" id="sidebarNav">
+        <a href="#home" data-nav="home"><span class="nav-line"></span>Home</a>
+        <a href="#about" data-nav="about"><span class="nav-line"></span>Acerca de mí</a>
+        <a href="#projects" data-nav="projects"><span class="nav-line"></span>Proyectos</a>
+        <a href="#skills" data-nav="skills"><span class="nav-line"></span>Stack</a>
+        <a href="#contact" data-nav="contact"><span class="nav-line"></span>Contacto</a>
+      </nav>
+
+      <div class="sidebar__socials">
+        <a href="https://github.com/natocatface" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.98 5.24.98 11.52c0 5.02 3.26 9.28 7.78 10.78.57.1.78-.25.78-.55v-2.1c-3.17.69-3.84-1.36-3.84-1.36-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.24 3.34.95.1-.74.4-1.24.72-1.53-2.53-.29-5.19-1.27-5.19-5.63 0-1.24.44-2.26 1.17-3.06-.12-.29-.51-1.45.11-3.02 0 0 .96-.31 3.14 1.17a10.9 10.9 0 0 1 5.72 0c2.18-1.48 3.14-1.17 3.14-1.17.62 1.57.23 2.73.11 3.02.73.8 1.17 1.82 1.17 3.06 0 4.37-2.67 5.34-5.21 5.62.41.36.77 1.06.77 2.14v3.17c0 .3.21.66.79.55A11.03 11.03 0 0 0 23.02 11.52C23.02 5.24 18.27.5 12 .5Z"/></svg>
+        </a>
+        <a href="https://linkedin.com/in/ravh0303" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.47v6.27ZM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.8 0 0 .78 0 1.75v20.5C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.75V1.75C24 .78 23.2 0 22.22 0Z"/></svg>
+        </a>
+        <a href="mailto:rvillarroelh@gmail.com" aria-label="Email">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M2 4h20a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1Zm19.4 2H2.6l9.4 7.05L21.4 6ZM3 8.24V18h18V8.24l-9 6.76-9-6.76Z"/></svg>
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- CONTENT: this is the part that scrolls -->
+  <main class="content" id="top">
+
+    <!-- HOME -->
+    <section class="home" id="home">
+      <div class="intro-quote reveal">
+        <p>"Escribir código que una computadora entienda es fácil; el verdadero arte está en escribir código que los humanos comprendan. Mi meta no es ser un programador extraordinario, sino un programador con hábitos extraordinarios."</p>
+        <cite>— Inspirado en Martin Fowler</cite>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+      <div class="section-head">
+        <p class="eyebrow">01 — Acerca de mí</p>
+        <h2>Del problema a la solución: tecnología fácil de usar y pensada para crecer.</h2>
+      </div>
+      <div class="about__grid">
+        <div class="about__text reveal">
+          <p>Mi pasión por la tecnología nació en 2016, impulsada por la curiosidad de entender cómo el código y los datos podían resolver problemas reales y hacer la vida de las personas más sencilla. Con el tiempo, esa curiosidad se convirtió en mi propósito: crear herramientas tecnológicas que generen un impacto positivo, auténtico y tangible en el día a día de las empresas y sus comunidades.</p>
+          <p>Diseño y construyo sistemas de gestión y facturación electrónica para sectores como farmacias, restaurantes, colegios y veterinarias, adaptados a las normativas de diversos países de Latinoamérica. Para mí, la tecnología cobra sentido cuando trabaja en función de las personas y sus negocios, y no al revés.</p>
+          <p>A lo largo de mi trayectoria en sectores como Banca, Telecomunicaciones, Retail, Seguros, E-commerce, Marketing y Consumo Masivo, he enfocado mi trabajo en transformar datos en decisiones estratégicas e implementar soluciones End-to-End en nubes como GCP, AWS y Azure.</p>
+        </div>
+        <div class="about__stats reveal">
+          <div class="stat">
+            <span class="stat__num" data-count="17">0</span>
+            <span class="stat__label">Sistemas de gestión creados</span>
+          </div>
+          <div class="stat">
+            <span class="stat__num" data-count="20">0</span>
+            <span class="stat__label">Soluciones de facturación implementadas</span>
+          </div>
+          <div class="stat">
+            <span class="stat__num" data-count="5">0</span>
+            <span class="stat__label">Países con clientes activos</span>
+          </div>
+          <div class="stat">
+            <span class="stat__num" data-count="37">0</span>
+            <span class="stat__label">Proyectos digitales entregados</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="projects" id="projects">
+      <div class="section-head">
+        <p class="eyebrow">02 — Proyectos</p>
+        <h2>Casos de éxito y sistemas desarrollados</h2>
+        <p class="section-sub">Una muestra de las plataformas de gestión y facturación electrónica que he diseñado para ayudar a distintos negocios a operar de forma más eficiente.</p>
+      </div>
+
+      <div class="filters" id="filters">
+        <button class="filter-btn is-active" data-filter="all">Todos</button>
+        <button class="filter-btn" data-filter="saas">Sistemas de Gestión</button>
+        <button class="filter-btn" data-filter="facturacion">Facturación Electrónica</button>
+        <button class="filter-btn" data-filter="web">Sitios Web</button>
+      </div>
+
+      <div class="projects__grid" id="projectsGrid"></div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="skills" id="skills">
+      <div class="section-head">
+        <p class="eyebrow">03 — Stack Tecnológico</p>
+        <h2>Mi stack, en órbita.</h2>
+      </div>
+      <div class="sphere-wrap">
+        <canvas id="sphereCanvas"></canvas>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+      <div class="section-head">
+        <p class="eyebrow">04 — Contacto</p>
+        <h2>¿Hablamos de tu próximo proyecto?</h2>
+        <p class="section-sub">Escribime directo o dejame un mensaje por acá.</p>
+      </div>
+
+      <div class="contact__grid">
+        <form class="contact__form reveal" id="contactForm">
+          <div class="field">
+            <label for="name">Nombre</label>
+            <input type="text" id="name" name="name" required placeholder="Tu nombre">
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required placeholder="tu@email.com">
+          </div>
+          <div class="field">
+            <label for="message">Mensaje</label>
+            <textarea id="message" name="message" rows="2" required placeholder="Contame sobre tu proyecto..."></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary btn--block">Enviar mensaje</button>
+          <p class="form-note" id="formNote"></p>
+        </form>
+
+        <div class="contact__socials reveal">
+          <a href="https://github.com/natocatface" target="_blank" rel="noopener" class="social-card">
+            <span class="social-card__icon">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.98 5.24.98 11.52c0 5.02 3.26 9.28 7.78 10.78.57.1.78-.25.78-.55v-2.1c-3.17.69-3.84-1.36-3.84-1.36-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.24 3.34.95.1-.74.4-1.24.72-1.53-2.53-.29-5.19-1.27-5.19-5.63 0-1.24.44-2.26 1.17-3.06-.12-.29-.51-1.45.11-3.02 0 0 .96-.31 3.14 1.17a10.9 10.9 0 0 1 5.72 0c2.18-1.48 3.14-1.17 3.14-1.17.62 1.57.23 2.73.11 3.02.73.8 1.17 1.82 1.17 3.06 0 4.37-2.67 5.34-5.21 5.62.41.36.77 1.06.77 2.14v3.17c0 .3.21.66.79.55A11.03 11.03 0 0 0 23.02 11.52C23.02 5.24 18.27.5 12 .5Z"/></svg>
+            </span>
+            <span>
+              <strong>GitHub</strong>
+              <small>@natocatface</small>
+            </span>
+          </a>
+          <a href="https://linkedin.com/in/ravh0303" target="_blank" rel="noopener" class="social-card">
+            <span class="social-card__icon">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.47v6.27ZM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.8 0 0 .78 0 1.75v20.5C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.75V1.75C24 .78 23.2 0 22.22 0Z"/></svg>
+            </span>
+            <span>
+              <strong>LinkedIn</strong>
+              <small>ravh0303</small>
+            </span>
+          </a>
+          <a href="mailto:rvillarroelh@gmail.com" class="social-card">
+            <span class="social-card__icon">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M2 4h20a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1Zm19.4 2H2.6l9.4 7.05L21.4 6ZM3 8.24V18h18V8.24l-9 6.76-9-6.76Z"/></svg>
+            </span>
+            <span>
+              <strong>Email</strong>
+              <small>rvillarroelh@gmail.com</small>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>© <span id="year"></span> Renato Villarroel H. - Todos los derechos reservados</p>
+    </footer>
+  </main>
+</div>
+
+<div class="modal" id="imgModal" aria-hidden="true">
+  <div class="modal__backdrop" id="modalBackdrop"></div>
+  <div class="modal__dialog" role="dialog" aria-modal="true" aria-label="Vista previa del proyecto">
+    <button class="modal__close" id="modalClose" aria-label="Cerrar">&times;</button>
+    <img class="modal__img" id="modalImg" src="" alt="">
+    <p class="modal__caption" id="modalCaption"></p>
+  </div>
+</div>
+
+<div class="modal modal--confirm" id="confirmModal" aria-hidden="true">
+  <div class="modal__backdrop" id="confirmModalBackdrop"></div>
+  <div class="modal__dialog modal__dialog--confirm" role="dialog" aria-modal="true" aria-label="Mensaje enviado">
+    <button class="modal__close" id="confirmModalClose" aria-label="Cerrar">&times;</button>
+    <div class="confirm__icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <h3 class="confirm__title">¡Mensaje enviado!</h3>
+    <p class="confirm__text">Te contactaremos pronto.</p>
+    <button type="button" class="btn btn--primary" id="confirmModalOk">Entendido</button>
+  </div>
+</div>
+
+<script src="js/starfield.js?v=30"></script>
+<script src="js/parallax.js?v=30"></script>
+<script src="js/bg-parallax.js?v=30"></script>
+<script src="js/sphere.js?v=30"></script>
+<script src="js/projects.js?v=30"></script>
+<script src="js/typewriter.js?v=30"></script>
+<script src="js/main.js?v=30"></script>
+</body>
+</html>

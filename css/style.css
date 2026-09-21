@@ -282,7 +282,7 @@ button{ font-family: inherit; cursor: pointer; }
 .about .section-head{ margin-bottom: 10px; }
 .about .section-head h2{ font-size: clamp(22px, 3vw, 32px); }
 .about__grid{ padding: 0 24px; }
-.about__text{ margin-bottom: 14px; }
+.about__text{ margin-bottom: 14px; max-width: 760px; }
 .about__text p{ color: var(--text-muted); font-size: 14.5px; line-height: 1.45; margin-bottom: 7px; }
 .about__text strong{ color: var(--text); font-weight: 600; }
 .about__stats{ display:grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
@@ -449,7 +449,7 @@ button{ font-family: inherit; cursor: pointer; }
 @media (max-width: 860px){ .contact__grid{ grid-template-columns: 1fr; } }
 
 .contact__form{
-  display:flex; flex-direction:column; gap: 8px;
+  display:flex; flex-direction:column; gap: 8px; max-width: 520px;
   border: 1px solid var(--border); border-radius: var(--radius); padding: 16px;
   background: linear-gradient(160deg, rgba(255,255,255,.02), transparent);
 }

@@ -99,9 +99,9 @@ button{ font-family: inherit; cursor: pointer; }
 .nav__burger.is-active span:nth-child(3){ transform: translateY(-7px) rotate(-45deg); }
 
 .nav__mobile{
-  position: fixed; top: 66px; right: 20px; z-index: 99;
+  position: fixed; top: 66px; right: 20px; z-index: 200;
   width: min(260px, calc(100vw - 40px));
-  background: rgba(14,14,18,0.97); border: 1px solid var(--border); border-radius: var(--radius-sm);
+  background: #0e0e12; border: 1px solid var(--border); border-radius: var(--radius-sm);
   box-shadow: 0 24px 60px -20px rgba(0,0,0,.7);
   display:flex; flex-direction: column; padding: 8px;
   transform: translateY(-12px) scale(.98); opacity: 0; pointer-events: none;

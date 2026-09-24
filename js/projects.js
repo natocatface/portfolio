@@ -1,5 +1,10 @@
 const PROJECTS = [
   {
+    slug: 'habanda', title: 'Habanda', category: 'web', country: 'PE',
+    desc: 'Estudio jurídico en Lima: asesoría en Derecho de Familia, Civil, Laboral y Administrativo.',
+    img: 'habanda.png'
+  },
+  {
     slug: 'inmobisur', title: 'InmobiSur', category: 'web', country: 'PE',
     desc: 'Lotes en la Antigua Panamericana Sur con calculadora de financiamiento interactiva.',
     img: 'inmobisur.png'

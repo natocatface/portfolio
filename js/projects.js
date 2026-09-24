@@ -128,6 +128,61 @@ const PROJECTS = [
     slug: 'webmk', title: 'WebMK', category: 'web', country: 'PE',
     desc: 'E-commerce de regalos piramidales personalizados con configurador de 4 niveles y checkout por WhatsApp.',
     img: 'webmk.png'
+  },
+  {
+    slug: 'inmobiliaria-nexus', title: 'Nexus Inmobiliaria', category: 'saas', country: 'PE',
+    desc: 'CRM inmobiliario con gestión de propiedades, clientes y ventas. Stack Node/Express + React.',
+    img: 'inmobiliaria-nexus.png'
+  },
+  {
+    slug: 'ssoma-sistema', title: 'SSOMA', category: 'saas', country: 'PE',
+    desc: 'Sistema de Seguridad y Salud Ocupacional para gestión de incidentes y cumplimiento normativo.',
+    img: 'ssoma.png'
+  },
+  {
+    slug: 'tienda-regalos', title: 'Regalo de Ensueño', category: 'saas', country: 'PE',
+    desc: 'E-commerce y panel administrativo para tienda de regalos, con gestión de pedidos e inventario.',
+    img: 'tienda-regalos.png'
+  },
+  {
+    slug: 'alquiler-vehiculos', title: 'RentCar Web App', category: 'saas', country: 'PE',
+    desc: 'Sistema de alquiler de vehículos con control de reservas, clientes y flota.',
+    img: 'alquiler-vehiculos.png'
+  },
+  {
+    slug: 'sistema-avicolas', title: 'Mi Granja Avícola', category: 'saas', country: 'PE',
+    desc: 'Gestión de granjas avícolas: producción, inventario y control de lotes.',
+    img: 'avicolas.png'
+  },
+  {
+    slug: 'catering-erp', title: 'Gourmet Catering ERP', category: 'saas', country: 'PE',
+    desc: 'ERP para servicios de catering: eventos, menús, insumos y facturación interna.',
+    img: 'catering.png'
+  },
+  {
+    slug: 'escuelas-deportivas', title: 'Gestión Académica Deportiva', category: 'saas', country: 'PE',
+    desc: 'Administración de escuelas deportivas: alumnos, horarios, pagos y asistencia.',
+    img: 'escuelas-deportivas.png'
+  },
+  {
+    slug: 'hostal-gestion', title: 'Hostal Gestión', category: 'saas', country: 'PE',
+    desc: 'Sistema de gestión hostalera: reservas, habitaciones y check-in/out.',
+    img: 'hostales.png'
+  },
+  {
+    slug: 'lavanderia-ropas', title: 'Lavandería Ropas', category: 'saas', country: 'PE',
+    desc: 'Control de órdenes, clientes y estados de prendas para lavanderías.',
+    img: 'lavanderia.png'
+  },
+  {
+    slug: 'mudanzas-pro', title: 'MudanzasPro S.A.C.', category: 'saas', country: 'PE',
+    desc: 'Gestión de servicios de mudanza: cotizaciones, rutas y seguimiento de clientes.',
+    img: 'mudanzas.png'
+  },
+  {
+    slug: 'muebleria-elegance', title: 'Muebles & Diseño Elegance', category: 'saas', country: 'PE',
+    desc: 'ERP para mueblería: producción, inventario, ventas y clientes.',
+    img: 'muebleria.png'
   }
 ];
 

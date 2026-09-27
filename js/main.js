@@ -109,20 +109,38 @@ filterBtns.forEach((btn) => {
   });
 });
 
-/* Image modal (project preview) */
+/* Image modal (project preview, with optional multi-image gallery) */
 const modal = document.getElementById('imgModal');
 const modalImg = document.getElementById('modalImg');
 const modalCaption = document.getElementById('modalCaption');
+const modalCounter = document.getElementById('modalCounter');
 const modalClose = document.getElementById('modalClose');
 const modalBackdrop = document.getElementById('modalBackdrop');
+const modalPrev = document.getElementById('modalPrev');
+const modalNext = document.getElementById('modalNext');
 let lastFocused = null;
+let currentGallery = [];
+let currentGalleryIndex = 0;
+let currentProjectTitle = '';
+
+function renderModalImage() {
+  const img = currentGallery[currentGalleryIndex];
+  modalImg.src = `assets/projects/${img}`;
+  modalImg.alt = `Captura de ${currentProjectTitle}`;
+  modalCaption.textContent = currentProjectTitle;
+  const hasGallery = currentGallery.length > 1;
+  modalPrev.hidden = !hasGallery;
+  modalNext.hidden = !hasGallery;
+  modalCounter.textContent = hasGallery ? `${currentGalleryIndex + 1} / ${currentGallery.length}` : '';
+}
 
 function openModal(index) {
   const p = PROJECTS[index];
   if (!p) return;
-  modalImg.src = `assets/projects/${p.img}`;
-  modalImg.alt = `Captura del frontend de ${p.title}`;
-  modalCaption.textContent = p.title;
+  currentGallery = p.gallery && p.gallery.length ? p.gallery : [p.img];
+  currentGalleryIndex = 0;
+  currentProjectTitle = p.title;
+  renderModalImage();
   lastFocused = document.activeElement;
   modal.classList.add('is-open');
   modal.setAttribute('aria-hidden', 'false');
@@ -135,6 +153,16 @@ function closeModal() {
   document.body.style.overflow = '';
   if (lastFocused) lastFocused.focus();
 }
+function showPrev() {
+  if (currentGallery.length < 2) return;
+  currentGalleryIndex = (currentGalleryIndex - 1 + currentGallery.length) % currentGallery.length;
+  renderModalImage();
+}
+function showNext() {
+  if (currentGallery.length < 2) return;
+  currentGalleryIndex = (currentGalleryIndex + 1) % currentGallery.length;
+  renderModalImage();
+}
 
 document.getElementById('projectsGrid').addEventListener('click', (e) => {
   const btn = e.target.closest('[data-modal-index]');
@@ -143,8 +171,13 @@ document.getElementById('projectsGrid').addEventListener('click', (e) => {
 });
 modalClose.addEventListener('click', closeModal);
 modalBackdrop.addEventListener('click', closeModal);
+modalPrev.addEventListener('click', showPrev);
+modalNext.addEventListener('click', showNext);
 window.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
+  if (!modal.classList.contains('is-open')) return;
+  if (e.key === 'Escape') closeModal();
+  if (e.key === 'ArrowLeft') showPrev();
+  if (e.key === 'ArrowRight') showNext();
 });
 
 /* Contact form -> Supabase */

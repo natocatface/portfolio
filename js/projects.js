@@ -1,5 +1,11 @@
 const PROJECTS = [
   {
+    slug: 'movitel', title: 'MoviTEL', category: 'saas', country: 'PE',
+    desc: 'Plataforma de gestión de campañas para el Call Center de Movistar: campañas, contactos, agentes, supervisores y reportes con control de acceso por roles.',
+    img: 'movitel-2.png',
+    gallery: ['movitel-1.png', 'movitel-2.png', 'movitel-3.png', 'movitel-4.png', 'movitel-5.png']
+  },
+  {
     slug: 'callops', title: 'VoxCentra', category: 'saas', country: 'PE',
     desc: 'Plataforma de gestión de campañas para Call Center con una capa de IA integrada (VoxCentra AI): insights, alertas, AI Coach y asistente conversacional, todo generado a partir de los datos operativos reales.',
     img: 'callops-2.png',

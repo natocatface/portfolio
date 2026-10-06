@@ -1,5 +1,11 @@
 const PROJECTS = [
   {
+    slug: 'callops', title: 'CallOps', category: 'saas', country: 'PE',
+    desc: 'Plataforma de gestión de campañas para Call Center: autenticación con roles, dashboard, campañas, contactos, agentes y reportes.',
+    img: 'callops-2.png',
+    gallery: ['callops-1.png', 'callops-2.png', 'callops-3.png', 'callops-4.png', 'callops-5.png', 'callops-6.png']
+  },
+  {
     slug: 'kaya-active', title: 'Kaya Active', category: 'web', country: 'PE',
     desc: 'Tienda online de ropa deportiva para mujer, con catálogo filtrable y pedidos directos por WhatsApp.',
     img: 'kaya-active-1.png',
